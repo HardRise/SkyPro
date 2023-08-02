@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet  id="1"  author="morozov">
+        <!--<preConditions  onFail="WARN">
+            <sqlCheck  expectedResult="0">SELECT COUNT(*) FROM tasks</sqlCheck>
+        </preConditions>-->
+        <createTable  tableName="tasks">
+            <column  name="id"  type="bigint"  autoIncrement="true">
+                <constraints  primaryKey="true"  nullable="false"/>
+            </column>
+            <column  name="chat_id"  type="int"/>
+            <column  name="text_of_message"  type="varchar(50)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="date_of_task"  type="timestamp"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
